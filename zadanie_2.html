@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var a = prompt("введите число от -999 до +999");
+        if (-999<=a && a<=-100) {
+            document.write("вы ввели отрицательное трехзначное число ");
+        }else if (-99<=a && a<=-10) {
+            document.write("вы ввели отрицательное двухзначное число ");
+        }else if (-9<=a && a<=-1){
+            document.write("вы ввели отрицательное однозначное число ");
+        }else if (a=0){
+            document.write("енто нолик, че ты вводишь ");
+        }else if (a>=1 && a<=9){
+            document.write("вы ввели однозначное положительное число ");
+        }else if (a>=10 && a<=99){
+            document.write("вы ввели двухзначное положительное число ");}
+            else {
+            document.write("вы ввели трехзначное положительное число ");
+        }
+    </script>
+</body>
+</html>
