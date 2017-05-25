@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /* //рекурсия вычисления факториала
+
+     function factorial(n) {
+     if (n===0){
+     return 1;
+     }else {
+     return n*factorial(n-1);
+     }
+     }
+
+     */
+
+    //объект функции через метод
+    var student = {
+        name:"Михаил",
+        surname:"Шалаев",
+        age: "34 года",
+        interests: {
+            int: "интересы: ",
+            art: "искусство, ",
+            reading: "книги, ",
+            hobbies: "путешествия "},
+        university:"Образование: СПбГТИ(ТУ) и ИТМО"
+    };
+    function logInfo() {
+        console.log(this.name, this.surname, this.age);
+        console.log(this.interests.int, this.interests.art, this.interests.reading, this.interests.hobbies);
+        console.log(this.university);
+    }
+    student.logInfo=logInfo;
+    student.logInfo();
+
+</script>
+
+</body>
+</html>
