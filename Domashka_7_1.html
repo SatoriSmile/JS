@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="plotly-latest.min.js"></script>
+    <div id="placeholder" style="width: 600px; height: 500px;"></div>
+    <script>
+        // построение графика используя стороннюю библиатеку
+        function findeY(x){
+            if (x>1){
+                return 5/x;
+            }else if(0<1){
+                return x*x-4*x;
+            }
+        }
+        var line1={
+            x:[],
+            y:[],
+            type:'scatter'
+        };
+
+        for(var i=-5; i<=5;i+=0.01){
+            line1.x.push(i);
+            line1.y.push(findeY(i));
+        }
+        var data=[line1];
+        Plotly.newPlot('placeholder',data);
+
+        // своя библиотека js
+        var myLib = (function(){
+            var obj={};
+            // поиск максимального значения
+            obj.max=function (arr) {
+                var max = arr[0];
+                for (var i = 1; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+                        return max;
+                    }
+                }
+            };
+            // поиск минимального значения
+            obj.min=function (arr) {
+                var min = arr[0];
+                for (var i=1; i<arr.length; i++){
+                    if (arr[i]<min){
+                        min=arr[i];
+                        return min;
+                    }
+                }
+            };
+            // поиск среднего арифметического значения
+            obj.mid=function (arr) {
+                var b = 0;
+                for (var i = 0; i < arr.length; i++) {
+                    b = (b + arr[i]);
+                    mid = b / arr.length;
+                    return mid;
+                }
+            };
+            // клонирование переданного массива
+            obj.clone=function (arr) {
+                var new_arr = arr.slice(0);
+                return new_arr;
+            };
+            return obj;
+         }());
+
+    </script>
+</body>
+</html>
