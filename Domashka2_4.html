@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица умножения</title>
+    <style>
+        td{
+            border: 1px solid indigo;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+        }
+        td:hover {
+            background-color: #007069;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <script>
+            /*таблица умножения*/
+            document.write("<tr><td> </td>");
+            for (i = 1; i <=10; i++) document.write("<td>"+i+" </td>");
+            document.write("</tr>");
+            for (i = 1; i <=10; i++)
+            {
+                document.write("<tr><td>" + i + " </td>");
+                for (j = 1; j <= 10; j++){
+                    document.write("<td bgcolor='#00ffa0'>" + (i*j) + " </td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+
+</body>
+</html>
